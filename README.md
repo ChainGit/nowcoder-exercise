@@ -1,5 +1,6 @@
 # nowcoder-exercise
 
-Some exercise problems in [newcoder](https://www.nowcoder.com).
+Some exercise problems in [nowcoder](https://www.nowcoder.com).
 
 🐂
+
