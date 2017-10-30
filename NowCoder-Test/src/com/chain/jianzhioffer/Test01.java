@@ -33,6 +33,12 @@ public class Test01 {
 		test1();
 
 		test2();
+
+		test3();
+	}
+
+	private void test3() {
+		System.out.println(new Solution01().find(t, a));
 	}
 
 	// 利用矩形的性质，缩小范围
@@ -97,6 +103,31 @@ public class Test01 {
 		System.out.println(res);
 		if (res)
 			System.out.println("[" + px + ", " + py + "]");
+	}
+
+}
+
+class Solution01 {
+
+	// 假定元素是不重复的
+	public boolean find(int target, int[][] array) {
+		if (array == null)
+			return false;
+		int trows = array.length;
+		int tcols = array[0].length;
+		if (trows < 1 || tcols < 1)
+			return false;
+		int row = 0;
+		int col = tcols - 1;
+		while (row < trows && col > -1) {
+			if (array[row][col] == target)
+				return true;
+			else if (array[row][col] > target)
+				col--;
+			else
+				row++;
+		}
+		return false;
 	}
 
 }
