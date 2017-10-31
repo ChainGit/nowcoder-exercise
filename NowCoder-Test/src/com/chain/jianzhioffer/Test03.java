@@ -1,6 +1,8 @@
 package com.chain.jianzhioffer;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -29,6 +31,19 @@ public class Test03 {
 		init();
 		test2();
 		output();
+
+		test3();
+	}
+
+	private void test3() {
+		List<Integer> lst = new Solution02().printListFromTailToHead(head);
+		int len = lst.size();
+		for (int i = 0; i < len; i++) {
+			System.out.print(lst.get(i));
+			if (i < len - 1)
+				System.out.print(" ");
+		}
+		System.out.println();
 	}
 
 	// 利用系统运行栈（数据量大容易溢出）
@@ -104,6 +119,27 @@ public class Test03 {
 
 		ListNode(int val) {
 			this.val = val;
+		}
+	}
+
+	class Solution02 {
+
+		public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
+			LinkedList<Integer> stack = new LinkedList<>();
+
+			{
+				ListNode head = listNode;
+				ListNode current = head;
+				while (current != null) {
+					stack.push(current.val);
+					current = current.next;
+				}
+			}
+
+			ArrayList<Integer> lst = new ArrayList<>();
+			while (!stack.isEmpty())
+				lst.add(stack.pop());
+			return lst;
 		}
 	}
 
