@@ -32,7 +32,7 @@ public class Test13 {
 		System.out.println();
 	}
 
-	// 一个数组，时间复杂度高，空间复杂度低，类似插入排序，如果不需要保持相对位置，可以使用类似快速排序的方法
+	// 一个数组，时间复杂度高，空间复杂度低，类似插入排序原理，如果不需要保持相对位置，可以使用类似快速排序的方法
 	private void test2(int[] a) {
 		int len = a.length;
 		int p = 0;
