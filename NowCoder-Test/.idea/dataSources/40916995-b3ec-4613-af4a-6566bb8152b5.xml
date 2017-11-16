@@ -10,67 +10,31 @@
     <schema id="4" parent="1" name="mysql"/>
     <schema id="5" parent="1" name="performance_schema"/>
     <schema id="6" parent="1" name="test"/>
-    <table id="7" parent="2" name="dept_emp"/>
-    <table id="8" parent="2" name="employees"/>
-    <column id="9" parent="7" name="emp_no">
+    <table id="7" parent="2" name="salaries"/>
+    <column id="8" parent="7" name="emp_no">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="10" parent="7" name="dept_no">
+    <column id="9" parent="7" name="salary">
       <Position>2</Position>
-      <DataType>char(4)|0</DataType>
+      <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="11" parent="7" name="from_date">
+    <column id="10" parent="7" name="from_date">
       <Position>3</Position>
       <DataType>date|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="12" parent="7" name="to_date">
+    <column id="11" parent="7" name="to_date">
       <Position>4</Position>
       <DataType>date|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="13" parent="7" name="PRIMARY">
+    <key id="12" parent="7" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>emp_no
-dept_no</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="14" parent="8" name="emp_no">
-      <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="15" parent="8" name="birth_date">
-      <Position>2</Position>
-      <DataType>date|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="16" parent="8" name="first_name">
-      <Position>3</Position>
-      <DataType>varchar(14)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="17" parent="8" name="last_name">
-      <Position>4</Position>
-      <DataType>varchar(16)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="18" parent="8" name="gender">
-      <Position>5</Position>
-      <DataType>char(1)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="19" parent="8" name="hire_date">
-      <Position>6</Position>
-      <DataType>date|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <key id="20" parent="8" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>emp_no</ColNames>
+from_date</ColNames>
       <Primary>1</Primary>
     </key>
   </database-model>
