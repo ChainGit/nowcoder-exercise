@@ -1,7 +1,5 @@
 package com.chain.jianzhioffer;
 
-import java.util.Arrays;
-
 import org.junit.Test;
 
 /**
@@ -26,14 +24,46 @@ public class Test29 {
 		output();
 	}
 
+	// 牛客网的返回减少null，而是返回一个空的集合
 	private void test1() {
 		r = fun(a, k);
 	}
 
-	// 新建一个容器，利用插入排序的方法
+	// 新建一个容器，类似插入排序的方法
 	private int[] fun(int[] input, int k) {
-
-		return null;
+		int[] a = input;
+		if (a == null || k < 1)
+			return null;
+		// k可能大于或等于len
+		int len = a.length;
+		int alen = len > k ? k : len;
+		int[] r = new int[k];
+		r[0] = a[0];
+		boolean insert = false;
+		for (int i = 1, p = 1; i < len; i++) {
+			insert = false;
+			for (int j = 0; j < p; j++) {
+				if (r[j] > a[i]) {
+					for (int m = p; m > j; m--)
+						if (m < alen)
+							r[m] = r[m - 1];
+					r[j] = a[i];
+					insert = true;
+					if (p < alen)
+						p++;
+					break;
+				}
+			}
+			if (!insert && p < alen)
+				r[p++] = a[i];
+		}
+		if (len <= k) {
+			int[] m = new int[alen];
+			for (int i = 0; i < alen; i++)
+				m[i] = r[i];
+			r = m;
+		}
+		return r;
 	}
 
 	private void input() {
@@ -42,7 +72,9 @@ public class Test29 {
 	}
 
 	private void output() {
-		System.out.println(Arrays.asList(r));
+		for (int i = 0; i < k; i++)
+			System.out.print(r[i] + " ");
+		System.out.println();
 	}
 
 	private void init() {
