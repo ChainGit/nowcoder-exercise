@@ -20,7 +20,7 @@ public class Test00 {
 	}
 
 	private void test1() {
-
+		// 新建一个fun(...)
 	}
 
 	private void input() {
