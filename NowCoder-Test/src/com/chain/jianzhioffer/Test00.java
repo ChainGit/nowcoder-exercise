@@ -3,9 +3,15 @@ package com.chain.jianzhioffer;
 import org.junit.Test;
 
 /**
- * 模板
+ * 题目：
+ * 
+ * 类型：
+ * 
+ * 书中：
  * 
  * @author chain
+ * 
+ *         算法应该尽量是平台无关的，即在Java平台下不使用现有的API
  *
  */
 public class Test00 {
